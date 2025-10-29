@@ -10,11 +10,18 @@ const defaultCustomIcon = leaflet.icon({
   iconAnchor: [15, 30],
 });
 
+const activeIcon = leaflet.icon({
+  iconUrl: '/img/pin-active.svg',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+});
+
 type MapProps = {
   offers: Offer[];
+  activeOfferId: string | null;
 };
 
-const OfferMap: FC<MapProps> = ({ offers }) => {
+const OfferMap: FC<MapProps> = ({ offers, activeOfferId }) => {
   const city = offers[0]?.location;
 
   if (!city) {
@@ -37,7 +44,7 @@ const OfferMap: FC<MapProps> = ({ offers }) => {
         <Marker
           key={offer.id}
           position={[offer.location.latitude, offer.location.longitude]}
-          icon={defaultCustomIcon}
+          icon={offer.id === activeOfferId ? activeIcon : defaultCustomIcon}
         >
           <Popup>{offer.title}</Popup>
         </Marker>

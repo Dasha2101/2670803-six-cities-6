@@ -2,6 +2,7 @@
 
 * Студент: [Дарья Шильникова](https://up.htmlacademy.ru/univer-js3/6/user/2670803).
 * Наставник: `Андрей Осипук`.
+* Ссылка на [CodeSandBox](https://codesandbox.io/p/github/Dasha2101/2670803-six-cities-6/master?import=true)
 
 ---
 
